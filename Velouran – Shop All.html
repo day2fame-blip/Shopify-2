@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Velouran – Shop All</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3f5f4;--surface:#fff;--ink:#17262b;--muted:#5d6d70;--teal:#1e5f5a;--sun:#f2b84b;--line:#d9e0de;--tile:#e3ebe8;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#101a1d;--surface:#172428;--ink:#eaf1ef;--muted:#9fb0b1;--teal:#6cc2b8;--line:#2a3b3f;--tile:#1f3135}}
+:root[data-theme="dark"]{--bg:#101a1d;--surface:#172428;--ink:#eaf1ef;--muted:#9fb0b1;--teal:#6cc2b8;--line:#2a3b3f;--tile:#1f3135}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.55 Figtree,system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque",Georgia,sans-serif;margin:0;line-height:1.15}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+.bar{background:var(--teal);color:#fff;text-align:center;padding:9px 16px;font-weight:600;font-size:14px}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .bar{color:#0c1a1c}}
+header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px clamp(16px,5vw,56px);border-bottom:1px solid var(--line);background:var(--surface);flex-wrap:wrap}
+.logo{font:700 26px "Bricolage Grotesque",sans-serif;text-decoration:none;letter-spacing:.02em}
+nav{display:flex;gap:22px;flex-wrap:wrap}nav a{text-decoration:none;color:var(--muted);font-weight:500}nav a[aria-current]{color:var(--ink);border-bottom:2px solid var(--teal)}
+.cart{background:var(--ink);color:var(--bg);padding:9px 18px;border-radius:99px;text-decoration:none;font-weight:600}
+main{max-width:1180px;margin:0 auto;padding:40px clamp(16px,5vw,56px) 64px}
+h1{font-size:clamp(34px,6vw,56px)}
+.sub{color:var(--muted);max-width:52ch;margin:10px 0 28px}
+.tools{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center;margin-bottom:24px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:8px 16px;border-radius:99px;font:500 14px Figtree,sans-serif;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+select{border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:9px 12px;border-radius:10px;font:500 14px Figtree,sans-serif}
+.count{color:var(--muted);font-size:14px;margin-bottom:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:26px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
+.tile{position:relative;aspect-ratio:1/1;background:var(--tile);display:grid;place-items:center}
+.tile svg{width:46%;height:46%;stroke:var(--teal);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.tile small{position:absolute;bottom:12px;left:0;right:0;text-align:center;color:var(--muted);font-size:12px}
+.badge{position:absolute;top:12px;left:12px;background:var(--sun);color:#2b2108;font-weight:700;font-size:13px;padding:4px 11px;border-radius:99px}
+.body{padding:18px;display:flex;flex-direction:column;gap:10px;flex:1}
+h3{font-size:19px}
+.price{display:flex;gap:10px;align-items:baseline}.price b{font-size:20px}.price s{color:var(--muted)}
+.opts{display:flex;gap:6px;flex-wrap:wrap}
+.opt{border:1px solid var(--line);background:transparent;color:var(--ink);padding:5px 12px;border-radius:8px;font:500 13px Figtree,sans-serif;cursor:pointer}
+.opt[aria-pressed="true"]{border-color:var(--teal);box-shadow:inset 0 0 0 1px var(--teal)}
+.buy{margin-top:auto;display:block;text-align:center;background:var(--teal);color:#fff;text-decoration:none;font-weight:600;padding:12px;border-radius:12px}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .buy{color:#0c1a1c}}
+.news{background:var(--teal);color:#fff;padding:48px clamp(16px,5vw,56px);text-align:center}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .news{background:var(--tile);color:var(--ink)}}
+.news p{margin:8px auto 20px;max-width:46ch;opacity:.9}
+.news div{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.news input{padding:12px 16px;border-radius:99px;border:0;min-width:min(280px,100%);font:inherit}
+.news button{padding:12px 22px;border-radius:99px;border:0;background:var(--sun);color:#2b2108;font:600 16px Figtree,sans-serif;cursor:pointer}
+.ok{min-height:24px;margin-top:10px;font-weight:600}
+footer{padding:36px clamp(16px,5vw,56px);background:var(--surface);border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}footer a{color:var(--muted);text-decoration:none}
+.pay{color:var(--muted);font-size:13px;max-width:34ch}
+</style>
+</head>
+<body>
+<div class="bar">Free shipping on orders over $75 · Add socks to any massager and save</div>
+<header>
+  <a class="logo" href="#">Velouran</a>
+  <nav aria-label="Main"><a href="#" aria-current="page">Catalog</a><a href="#contact">Contact</a><a href="#policies">Shipping &amp; Returns</a></nav>
+  <a class="cart" href="https://velouranofficial.myshopify.com/cart" target="_blank" rel="noopener">Cart</a>
+</header>
+<main>
+  <h1>Shop all</h1>
+  <p class="sub">Massagers and comfort basics made to help you unwind at the end of the day.</p>
+  <div class="tools">
+    <div class="chips" id="chips" role="group" aria-label="Filter by type"></div>
+    <label>Sort by <select id="sort"><option value="feat">Featured</option><option value="lo">Price, low to high</option><option value="hi">Price, high to low</option><option value="az">Alphabetically, A–Z</option></select></label>
+  </div>
+  <div class="count" id="count" aria-live="polite"></div>
+  <div class="grid" id="grid"></div>
+</main>
+<section class="news">
+  <h2>Get first access to new arrivals</h2>
+  <p>Join the list for new products and member-only offers.</p>
+  <div><input id="email" type="email" placeholder="Email address" aria-label="Email address"><button id="join">Subscribe</button></div>
+  <div class="ok" id="ok" role="status"></div>
+</section>
+<footer id="policies">
+  <div><div class="logo">Velouran</div><p class="pay">We accept Visa, Mastercard, American Express, Discover, PayPal, Apple Pay, Google Pay and Shop Pay.</p></div>
+  <ul id="contact"><li><b>Help</b></li><li><a href="#">Contact</a></li><li><a href="#">Shipping policy</a></li><li><a href="#">Returns &amp; refunds</a></li></ul>
+  <ul><li><b>Legal</b></li><li><a href="#">Privacy policy</a></li><li><a href="#">Terms of service</a></li></ul>
+</footer>
+<script>
+var STORE="https://velouranofficial.myshopify.com";
+var P=[
+{t:"Velouran™ Cordless Foot Massager",type:"Foot massagers",p:94.95,c:114.95,i:"M7 3c2 0 3 2 3 5s-1 6-1 9 1 4 3 4 5 0 5-3-2-3-4-6-1-9-6-9z",v:[["White","53751055253816"],["Charcoal","53751055286584"]]},
+{t:"Velouran™ Smart Hand Massager",type:"Hand massagers",p:74.95,c:99.95,i:"M8 21v-9M12 21V6M16 21V9M20 21v-6M4 21v-5M4 21h16",v:[["Standard","53751057154360"]]},
+{t:"Velouran™ Cloud Step Comfort Socks",type:"Socks",p:11.99,c:15.99,i:"M9 3h7v9l4 4c1.5 1.5 0 5-3 5H9c-2 0-3-1-3-3V3z",v:[["Beige","53751058563384"],["Black","53751058596152"],["White","53751058628920"]]}
+];
+var f="All",sel={};
+function money(n){return "$"+n.toFixed(2)}
+function render(){
+  var s=document.getElementById("sort").value,L=P.filter(function(x){return f=="All"||x.type==f});
+  if(s=="lo")L.sort(function(a,b){return a.p-b.p});if(s=="hi")L.sort(function(a,b){return b.p-a.p});if(s=="az")L.sort(function(a,b){return a.t.localeCompare(b.t)});
+  document.getElementById("count").textContent=L.length+" product"+(L.length==1?"":"s");
+  document.getElementById("grid").innerHTML=L.map(function(x){var k=P.indexOf(x),si=sel[k]||0,off=Math.round((1-x.p/x.c)*100);
+    return '<article class="card"><div class="tile"><span class="badge">Save '+off+'%</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="'+x.i+'"/></svg><small>Product photo coming soon</small></div><div class="body"><h3>'+x.t+'</h3><div class="price"><b>'+money(x.p)+'</b><s>'+money(x.c)+'</s></div>'+
+    (x.v.length>1?'<div class="opts" role="group" aria-label="Option">'+x.v.map(function(v,j){return '<button class="opt" data-k="'+k+'" data-j="'+j+'" aria-pressed="'+(j==si)+'">'+v[0]+'</button>'}).join("")+'</div>':'')+
+    '<a class="buy" target="_blank" rel="noopener" href="'+STORE+'/cart/'+x.v[si][1]+':1">Add to cart</a></div></article>'}).join("");
+}
+var types=["All"].concat(P.map(function(x){return x.type}));
+document.getElementById("chips").innerHTML=types.map(function(t){return '<button class="chip" aria-pressed="'+(t=="All")+'">'+t+'</button>'}).join("");
+document.getElementById("chips").onclick=function(e){if(e.target.className!="chip")return;f=e.target.textContent;[].forEach.call(this.children,function(c){c.setAttribute("aria-pressed",c.textContent==f)});render()};
+document.getElementById("sort").onchange=render;
+document.getElementById("grid").onclick=function(e){var b=e.target.closest(".opt");if(!b)return;sel[b.dataset.k]=+b.dataset.j;render()};
+document.getElementById("join").onclick=function(){var v=document.getElementById("email").value,o=document.getElementById("ok");o.textContent=/\S+@\S+\.\S+/.test(v)?"Thanks for subscribing.":"Enter a valid email address."};
+render();
+</script>
+</body>
+</html>
